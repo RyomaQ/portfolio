@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryoma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cmn8zki.css">
+</head>
+<body>
+    <!-- Curseur -->
+    <div class="cursor"></div>
+
+    <!-- Navigation verticale -->
+    <div id="verticalNav1">
+
+        <div class="sectionDot"></div>
+        <div class="navi-line"></div>
+        <div class="sectionDot"></div>
+        <div class="navi-line"></div>
+        <div class="sectionDot"></div>
+        <div class="positionDot"></div>
+    </div>
+    <!-- <div id="verticalNav2">
+        <div class="positionDot"></div>
+        <div class="sectionDot"></div>
+        <div class="navi-line"></div>
+        <div class="sectionDot"></div>
+        <div class="navi-line"></div>
+        <div class="sectionDot"></div>
+    </div> -->
+
+    <!-- Bouton pills -->
+    <nav id="menu-btn">
+        <li class="menu">MENU</li>
+        <li class="pages">Accueil</li>
+        <li class="pages">Webdesign</li>
+        <li class="pages">Coding</li>
+        <li class="pages">Imagerie</li>
+        <li class="pages">Graphisme</li>
+        <li class="pages">Contact</li>
+    </nav>
+    <button onclick="scrollFunction1()" id="scroll-btn"><img src="img/scroll-arrow.png" alt="scroll-arrow"></button>
+
+    <!-- Section 01 -->
+    <section id="section01">
+        <h1 id="bonjour">Bonjour,</h1>
+        <h1 id="jeSuis">je suis Ryoma</h1>
+        <h1 id="creative-designer">Un Creative Designer</h1>
+        <div id="gradientBg"></div>
+        <div id="noiseBg"></div>
+    </section>
+
+    <!-- Section 02 -->
+    <section id="section02">
+        <div id="p-main">
+            <div id="p-picture">
+                <img src="img/profile.png" alt="">
+            </div>
+            <div id="p-right">
+                <div id="p-titles">
+                    <div id="p-name">Ryoma Quenot</div>
+                    <div id="p-age">22 ans</div>
+                </div>
+                <div id="p-description">
+                    <div id="p-skills">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Figma</li>
+                            <li>After Effects</li>
+                            <li>Premiere Pro</li>
+                            <li>Photoshop</li>
+                            <li>Lightroom</li>
+                            <li>Illustrator</li>
+                            <li>InDesign</li>
+                            <li>Français</li>
+                            <li>Anglais</li>
+                            <li>Japonais</li>
+                        </ul>
+                    </div>
+                    <div id="p-text">
+                        <div id="p-about">
+                            Je suis un étudiant de l’IIM à Paris, La Défense. Après avoir obtenu mon diplôme bac +3 en création/design j’ai décidé de me projeter vers le développement informatique pour agrandir mon champ de compétence et pour créer mes projets en autonome. 
+                        </div>
+                        <div id="p-also">
+                            <p>
+                                En dehors de ça je pratique du BMX avec l’aide de mes sponsors Frenchys Distrib, Odyssey Bmx, Sunday Bikes, Performance BMX et Reno Bike Co. Vous pouvez retrouver toute mes vidéos sur <a href="https://www.instagram.com/r_keno/"  target=”_blank”>mon Instagram</a>. J’aime également les voyages, la cuisine, le vélo gravel, la musique  et la photographie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 03 -->
+    <section id="section03">
+        <form id="contactForm" action="https://formsubmit.co/ryoma1@hotmail.fr" method="POST">
+            <div><h2>Une question ?<br>Rentrons en contact !</h2>
+                <input id="nameInput" type="text" name="name" utocomplete="name" placeholder="Nom" required>
+            </div>
+            <input id="emailInput" type="email" name="email" autocomplete="email" placeholder="Email" required>
+            <textarea id="messageInput" rows="10" type="text" name="message" placeholder="Message" required></textarea>
+            <input type="hidden" name="_subject" value="Rentrons en contact !">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/#section03">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <button id="sendBtn" type="submit">Envoyer</button>
+       </form>
+        <div id="s3d2">
+            <img id="paperPlane" src="img/paper-plane.png" alt="paper-plane">
+            <div id="remerciement">
+                <p>Merci !</p>
+                <img id="drawBoy" src="img/draw-boy.png" alt="">
+            </div>
+            <div id="planeFrame"></div>
+        </div>
+    </section>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
