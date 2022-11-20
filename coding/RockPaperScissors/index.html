@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <main class="bottomReveal">
+        <button onclick="exit()" id="exit">Retour au projets</button>
+        <div id="bg"></div>
+        <div id="bot-div">
+            <div id="win-or-loose">
+                <img src="img/win.png" id="win" alt="">
+                <img src="img/loose.png" id="loose" alt="">
+            </div>
+            <img src="img/bot.png" id="bot" alt="bot">
+        </div>
+
+        <div id="bot-choice">
+            <img src="img/bot-rock.png" id="bot-rock" alt="">
+            <img src="img/bot-paper.png" id="bot-paper" alt="">
+            <img src="img/bot-scissors.png" id="bot-scissors" alt="">
+        </div>
+
+        <div id="user-choice">
+            <img src="img/user-rock.png" id="user-rock" alt="">
+            <img src="img/user-paper.png" id="user-paper" alt="">
+            <img src="img/user-scissors.png" id="user-scissors" alt="">
+        </div>
+
+        <div id="user-btns">
+            <input type="image" id="rock-btn" src="img/rock-btn.png">
+            <input type="image" id="paper-btn" src="img/paper-btn.png">
+            <input type="image" id="scissors-btn" src="img/scissors-btn.png">
+        </div>
+
+        <div id="points">
+            <p>BOT :&nbsp;<span id="botPoint">0</span></p>
+            <p>ME :&nbsp;<span id="myPoint">0</span></p>
+        </div>
+
+        <button id="reset-btn">Reset</button>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory - Easy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.jpg">
+</head>
+<body id="game" onload="onload();">
+    <main class="bottomReveal2">
+        <button onclick="exit()" id="exit">Retour au projets</button>
+    
+        <div id="textdiv">
+            <h1 id="title">Memory</h1>
+            <p id="score">Score : <span id="score-value">0</span></p>
+            <p id="record">Record : <span id="record-value">0</span></p> 
+        </div>
+
+        <div id="cards-div">
+
+        </div>
+
+        <div class="end-popup">
+            <h2 class="endmessage">Congrats !</h2>
+            <div id="button-div">
+                <a id="btn1" onclick="onLevelSelect('medium');">Medium</a>            
+                <a href="game.html" id="btn2">Restart</a>
+                <a id="btn3" onclick="onLevelSelect('hard');">Hard</a>
+            </div>
+            <button id="reset-btn" onclick="resetRecord();">Reset record</button>
+        </div>
+
+        <div class="end-popup">
+            <h2 class="endmessage">Congrats !</h2>
+            <div id="button-div">
+                <a id="btn1" onclick="onLevelSelect('easy');">Easy </a>            
+                <a href="game.html" id="btn2">Restart</a>
+                <a id="btn3" onclick="onLevelSelect('hard');">Hard</a>
+            </div>
+            <button id="reset-btn" onclick="resetRecord();">Reset record</button>
+        </div>
+
+        <div class="end-popup">
+            <h2 class="endmessage">Congrats !</h2>
+            <div id="button-div">
+                <a id="btn1" onclick="onLevelSelect('easy');">Easy</a>            
+                <a href="game.html" id="btn2">Restart</a>
+                <a id="btn3" onclick="onLevelSelect('medium');">Medium</a>
+            </div>
+            <button id="reset-btn" onclick="resetRecord();">Reset record</button>
+        </div>
+    </main>
+    
+    <script src="main.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>

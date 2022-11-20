@@ -1,17 +1,28 @@
 const gradientBg = document.querySelector("#gradientBg");
 const bonjour = document.querySelector("#bonjour");
+const jeSuis = document.querySelector("#jeSuis");
 const creativeDesigner = document.querySelector("#creative-designer");
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelectorAll('.menu');
-const pages = document.querySelectorAll('.pages')
-const positionDot = document.querySelectorAll('.positionDot')
-const jeSuis = document.querySelector("#jeSuis");
+const pages = document.querySelectorAll('.pages');
+const positionDot = document.querySelectorAll('.positionDot');
 const cursor = document.querySelector('.cursor');
 const sectionDot = document.querySelectorAll(".sectionDot");
 const verticalNav = document.querySelector('#verticalNav');
+const s2 = document.querySelector("#section02");
+const s3 = document.querySelector("#section03");
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
+// retourne le numéro de la colonne
+function indexInClass(collection, target) {
+    for (var i = 0; i < collection.length; i++) {
+        if (collection[i] == target)
+            return i;
+    }
+}
+
+// Animated BG
 document.addEventListener('mousemove', e => {
     cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
     gradientBg.classList.add("fadeIn");
@@ -28,6 +39,7 @@ document.addEventListener('mousemove', e => {
     
 })
 
+// Menu BTN
 let k = 0;
 menuBtn.addEventListener('click', function(){
     const toNav = document.querySelector('.toNav');
@@ -35,6 +47,7 @@ menuBtn.addEventListener('click', function(){
     if(k == 0 && menuBtn.classList.length == 0){
         menuBtn.classList.toggle('toNav')
         pages.forEach(e => e.classList.add('display'));
+        pages.forEach(e => e.style.display = 'block');
         menu[0].classList.toggle('undisplay');
         k++;
     } else if(k == 1) {
@@ -45,6 +58,9 @@ menuBtn.addEventListener('click', function(){
         pages.forEach(e => e.classList.remove('display'));
         void pages.forEach(e => e.offsetWidth);
         pages.forEach(e => e.classList.add('undisplay'));
+        setTimeout(() => {
+            pages.forEach(e => e.style.display = 'none');
+        }, 200)
         menu[0].classList.toggle('display');
         void menu[0].offsetWidth;
         menu[0].classList.toggle('undisplay');
@@ -54,6 +70,7 @@ menuBtn.addEventListener('click', function(){
         menuBtn.classList.remove('toNav');
         void menuBtn.offsetWidth;
         menuBtn.classList.add('toNav');
+        pages.forEach(e => e.style.display = 'block');
         pages.forEach(e => e.classList.remove('undisplay'));
         void pages.forEach(e => e.offsetWidth);
         pages.forEach(e => e.classList.add('display'));
@@ -64,6 +81,7 @@ menuBtn.addEventListener('click', function(){
     }
 })
 
+// Mouse
 document.addEventListener('click', () => {
     cursor.classList.add("expand");
     setTimeout(() => {
@@ -71,6 +89,7 @@ document.addEventListener('click', () => {
     }, 500)
 })
 
+// Scroll BTN
 function scrollFunction1() {
     if(window.pageYOffset <  925){
         s2.scrollIntoView({
@@ -87,11 +106,16 @@ function scrollFunction1() {
     }
 }
 
+function getVerticalScrollPercentage( elm ){
+    var p = elm.parentNode
+    return (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
+  }
 
+// Vertical Nav
 document.addEventListener('scroll', () => {
-    positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px'
-    console.log(1+(window.pageYOffset-1080)*(-0.7/100));
-    console.log(window.pageYOffset);
+    positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
+    let scrollValue = window.pageYOffset*100/windowHeight;
+    console.log(scrollValue);
 
     if(window.pageYOffset < 200 ) {
         positionDot[0].style.scale = 1 - window.pageYOffset*(0.7/200);
@@ -108,12 +132,6 @@ document.addEventListener('scroll', () => {
     }
 })
 
-function indexInClass(collection, target) {
-    for (var i = 0; i < collection.length; i++) {
-        if (collection[i] == target)
-            return i;
-    }
-}
 
 for(i=0; i < 3; i++){
     sectionDot[i].addEventListener('click', (event) => {
@@ -132,4 +150,11 @@ for(i=0; i < 3; i++){
     })
 }
 
+
+
+// Contact form 
+if(document.referrer == "http://127.0.0.1:5500/") {
+    document.querySelector("#paperPlane").classList.add("takeOff");
+    document.querySelector("#remerciement").classList.add("displayThank");
+}
 

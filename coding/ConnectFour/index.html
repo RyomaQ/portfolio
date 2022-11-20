@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Connect Four</title>
+</head>
+<body onload="onLoad();">
+    <main class="bottomReveal">
+        <button onclick="exit()" id="exit">Retour au projets</button>
+        <img id="logo" src="img/logo.png" alt="">
+        <div id="main-div">
+
+            <div class="cards-div">
+                <img src="img/player1-card.png" alt="player1-card">
+                <p><span id="p1score">0</span> win</p>
+            </div>
+
+            <div id="grid-div">
+                <div class="columns-div">
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                </div>
+                <img id="grid" src="img/grid.png" alt="grid">
+                <div id="end-popup">
+                    <div id="top-line">
+                        <h1>Player <span id="winner"></span> win</h1>
+                        <a id="play-again">Play again</a>
+                    </div>
+                    <a id="reset">Reset score</a>
+                </div>
+            </div>
+
+            <div class="cards-div">
+                <img src="img/player2-card.png" alt="player2-card">
+                <p><span id="p2score">0</span> win</p>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
