@@ -140,8 +140,8 @@ function resetFunction() {
     botPoint.innerHTML=botcount;
 }; 
 
-const bottomReveal = document.querySelector(".bottomReveal")
-const mainDiv = document.querySelector("main")
+const bottomReveal = document.querySelector(".bottomReveal");
+const mainDiv = document.querySelector("main");
 
 function exit() {
     bottomReveal.style.animationDirection = "reverse";

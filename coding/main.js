@@ -25,7 +25,7 @@ document.addEventListener('click', () => {
     }, 500)
 })
 
-// retourne le numéro de la colonne
+// retourne l'index
 function indexInClass(collection, target) {
     for (var i = 0; i < collection.length; i++) {
         if (collection[i] == target)

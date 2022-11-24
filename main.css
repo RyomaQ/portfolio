@@ -9,7 +9,7 @@
     --dark: #252525;
     --lightGrey: #E1E1E1;
     --title: fino;
-    --text: poppins;
+    --text: poppins, sans-serif;
 }
 
 /* Transition simple */
@@ -143,6 +143,18 @@
     background-color: #d9d9d9e7;
 }
 
+#scroll-btn {
+    justify-content: center;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    margin-top: 90vh;
+}
+
+#scroll-btn img {
+    width: 25%;
+    filter: drop-shadow(1px 1px 2px #0000008c);
+}
+
 .menu {
     position: absolute;
     /* filter: drop-shadow(1px 1px 10px #000000a1); */
@@ -169,20 +181,7 @@
     text-decoration:line-through;
 }
 
-#scroll-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    transform: translateX(-50%);
-    margin-left: 50%;
-    margin-top: 90vh;
-}
 
-#scroll-btn img {
-    width: 25%;
-    filter: drop-shadow(1px 1px 2px #0000008c);
-}
 
 @keyframes toNav {
     from {
@@ -302,22 +301,24 @@
 }
 
 #exit {
-    width: 300px;
+    width: 100px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     right: 0;
     margin: 40px;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     background: #00000000;
     color: #ffffff;
     z-index: 10;
     transition: 0.3s;
+    animation: fadeIn 2s forwards;
 }
 
 #exit:hover {
     background-color: #ffffff;
     color: var(--dark);
+    border: 2px solid var(--white);
 }

@@ -10,12 +10,10 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
 <body>
-    <div id="bgg"></div>
     <div id="bg"></div>
-
-
     <!-- Curseur -->
     <div class="cursor"></div>
+    <div id="whiteFade"></div>
 
     <nav id="menu-btn">
         <li class="menu">MENU</li>
@@ -26,9 +24,18 @@
         <a href="../graphisme/index.html"><li class="pages">Graphisme</li></a>
         <a href="../index.html#section03"><li class="pages">Contact</li></a>
     </nav>
-    <button onclick="scrollFunction1()" id="scroll-btn"><img src="../img/scroll-arrow.png" alt="scroll-arrow"></button>
-    
+    <div>
+        <button onclick="scrollFunction2()" id="scroll-btn2"><img src="../img/scroll-arrow2.png" alt="scroll-arrow"></button>
+        <button onclick="scrollFunction1()" id="scroll-btn"><img src="../img/scroll-arrow.png" alt="scroll-arrow"></button>
+    </div>
+
     <div id="main">
+
+        <div id="vertiNav">
+            <div class="navDot"></div>
+            <div class="navDot"></div>
+            <div class="navDot"></div>
+        </div>
 
         <div id="leftSide">
             <div id="titles" class="">
@@ -38,15 +45,15 @@
         </div>
 
         <div id="rightSide">
-            <a id="projet01" href="">
+            <a id="projet01" class="projet">
                 <img id="goodeedLogo" src="../img/goodeed_logo.png" alt="">
                 <img id="peaceGirl" src="../img/peace-girl.png" alt="">
             </a>
-            <a id="projet02" href="">
+            <a id="projet02" class="projet">
                 <img id="nomadsLogo" src="../img/nomads-logo.png" alt="">
                 <img id="nomadsPlate" src="../img/nomads-food.png" alt="">
             </a>
-            <a id="projet03" href="https://www.springandco.fr/" target="_blank">
+            <a id="projet03" class="projet" href="https://www.springandco.fr/" target="_blank">
                 <img id="springLogo" src="../img/spring-logo.png" alt="">
                 <img id="walkingBoy" src="../img/walking-boy.png" alt="">
             </a>

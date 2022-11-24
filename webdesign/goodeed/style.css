@@ -1,8 +1,298 @@
+@import url(../../main.css);
+
 * {
     margin: 0;
     padding: 0;
+    cursor: auto;
+    font-family: var(--text);
 }
 
-body {
-    background-color: rgb(206, 232, 255);
+.bottomReveal {
+    animation: bottomReveal 0.4s forwards;
+    transition-timing-function: cubic-bezier(.09,.36,.29,.99);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#exit {
+    border: 2px solid var(--dark);
+    color: var(--dark);
+    background: var(--white);
+}
+
+#exit:hover {
+    background-color: var(--dark);
+    border: 2px solid var(--white);
+    color: #ffffff;
+}
+
+.design-section01 {
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    filter: drop-shadow(0px 0px 20px #00000049);
+}
+
+.design-S1-left {
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 0.7s ease-in forwards;
+}
+
+.design-S1-right {
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeIn 0.7s ease-in forwards;
+}
+
+.design-S1-frame {
+    width: 90%;
+    background: url(../../img/goodeed-head.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 90vh;
+}
+
+@keyframes heightRevealMask {
+    0% {
+        height: 0vh;
+    }
+    100% {
+        height: 90vh;
+    }
+}
+
+.design-S1-head {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.design-S1-head img {
+    width: 150px;
+}
+
+.design-S1-head button {
+    width: 225px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid var(--dark);
+    color: var(--dark);
+    background: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.design-S1-head button:hover {
+    border: 2px solid white;
+    color: white;
+    background-color: #00AFFB;
+}
+
+.design-project-type {
+    font-size: 1.2vw;
+    margin-top: 1vh;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.design-description01 {
+    font-size: 2.3vw;
+    line-height: 120%;
+    margin-top: 3vh;
+}
+
+.design-description02 {
+    font-size: 2.3vw;
+    line-height: 120%;
+    margin-top: 5vh;
+}
+
+#h2-div {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+#title01 {
+    position: absolute;
+    margin-bottom: 5vh;
+    bottom: 0;
+}
+
+#fixedBG {
+    background: url(../../img/goodeed-design-system.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.mission-title {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+#section03 {
+    background-color: #E5F6FF;
+    width: 100%;
+    margin-top: 100vh;
+    filter: drop-shadow(0px 0px 20px #00000049);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10vh 0 5vh 0;
+}
+
+#section04 {
+    width: 100%;
+    padding: 10vh 0 5vh 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#section04 img {
+    width: 81%;
+}
+
+#section05 {
+    width: 100%;
+    height: 25vw;
+    padding: 5vh 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 1;
+}
+
+#section05 img {
+    width: 81%;
+    padding-top: 5vh;
+}
+
+#section06 {
+    width: 100%;
+    padding-top: 35vh;
+    padding-bottom: 10vh;
+    background-color: #E5F6FF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section06 img {
+    width: 81%;
+    padding-top: 5vh;
+}
+
+#section07 {
+    width: 100%;
+    padding: 10vh 0 5vh 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section07 video {
+    width: 80%;
+    margin-top: 5vh;
+}
+
+#section08 {
+    width: 100%;
+    padding: 5vh 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section08 div {
+    width: 80%;
+    display: flex;
+    height: fit-content;
+    gap: 10px;
+}
+
+#S8-L1 {
+    margin: 5vh 0 10px 0;
+}
+
+#section08 video {
+    min-width: 0;
+    height: fit-content;
+}
+
+#S8-L1 video:nth-child(1) {
+    width: 40%;
+}
+
+#S8-L1 video:nth-child(2) {
+    width: 71%;
+}
+
+#S8-L2 video:nth-child(1) {
+    width: 95%;
+}
+
+#S8-L2 video:nth-child(2) {
+    width: 30%;
+}
+
+#section09 {
+    width: 100%;
+    padding: 5vh 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+    margin: 5vh 0 15vh 0;
+    width: 80%;
+}
+
+#gallery div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#gallery div img {
+    height: fit-content;
+    min-width: 0;
 }

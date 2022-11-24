@@ -10,40 +10,47 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
 <body>
-
     <div id="bg"></div>
-
     <!-- Curseur -->
     <div class="cursor"></div>
+    <div id="whiteFade"></div>
 
     <nav id="menu-btn">
         <li class="menu">MENU</li>
         <a href="../index.html"><li class="pages">Accueil</li></a>
-        <a href="webdesign/index.html"><li class="pages">Webdesign</li></a>
-        <a href=""><li class="pages">Coding</li></a>
+        <a href="index.html"><li class="pages">Webdesign</li></a>
+        <a href="../coding/index.html"><li class="pages">Coding</li></a>
         <a href="../camera/index.html"><li class="pages">Camera</li></a>
-        <a href="../camera/index.html"><li class="pages">Graphisme</li></a>
-        <a href="../camera/index.html"><li class="pages">Contact</li></a>
+        <a href="../graphisme/index.html"><li class="pages">Graphisme</li></a>
+        <a href="../index.html#section03"><li class="pages">Contact</li></a>
     </nav>
+    <div>
+        <button onclick="scrollFunction2()" id="scroll-btn"><img src="../img/scroll-arrow.png" alt="scroll-arrow"></button>
+        <button onclick="scrollFunction1()" id="scroll-btn"><img src="../img/scroll-arrow.png" alt="scroll-arrow"></button>
+    </div>
+
     
     <div id="main">
 
         <div id="leftSide">
-            <div id="titles">
+            <div id="titles" class="">
                 <h1>Stage</h1>
                 <p>Goodeed invente les solutions de demain de collecte de dons en ligne pour aider les ONG à trouver de nouvelles sources de financements.</p>
             </div>
         </div>
 
         <div id="rightSide">
-            <a id="projet01" href="">
-                <img src="../img/goodeed-banni.png" alt="">
+            <a id="projet01" class="projet">
+                <img id="goodeedLogo" src="../img/goodeed_logo.png" alt="">
+                <img id="peaceGirl" src="../img/peace-girl.png" alt="">
             </a>
-            <a id="projet02" href="">
-                <img src="../img/nomads-banner.png" alt="">
+            <a id="projet02" class="projet">
+                <img id="nomadsLogo" src="../img/nomads-logo.png" alt="">
+                <img id="nomadsPlate" src="../img/nomads-food.png" alt="">
             </a>
-            <a id="projet03" href="https://www.springandco.fr/" target="_blank">
-                <img src="../img/spring-banner.png" alt="">
+            <a id="projet03" class="projet" href="https://www.springandco.fr/" target="_blank">
+                <img id="springLogo" src="../img/spring-logo.png" alt="">
+                <img id="walkingBoy" src="../img/walking-boy.png" alt="">
             </a>
         </div>
 
@@ -62,6 +69,7 @@
             ryoma1@hotmail.fr
         </a>
     </footer>
+
 
     <script src="main.js"></script>
 

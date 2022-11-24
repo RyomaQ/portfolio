@@ -1,15 +1,20 @@
 @import url(../main.css);
 
+.fadeIn {
+    animation: fadeIn 0.5s forwards reverse;
+}
+
 body {
     width: 100%;
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 #main {
     width: 100%;
     display: flex;
     justify-content: center;
-    animation: display 1s forwards;
+    animation: fadeIn 1s forwards;
 }
 
 #bg {
@@ -18,6 +23,20 @@ body {
     height: 100vh;
     background-image: url(../img/grainy-texture.jpg);
     z-index: -1;
+}
+
+#whiteFade {
+    background: #ffffff;
+    height: 100vh;
+    width: 100%;
+    z-index: 5;
+    position: fixed;
+    margin-top: 100vh;
+}
+
+.bottomReveal {
+    animation: bottomReveal 0.4s forwards;
+    transition-timing-function: cubic-bezier(.09,.36,.29,.99);
 }
 
 h1 {
@@ -35,42 +54,86 @@ p {
 }
 
 #titles {
-    margin-top: 50vh;
+    margin-top: 45vh;
+    margin-left: 5%;
     position: fixed;
-    width: 35%;
-    animation: display 5s forwards;
-    animation: pageReveal 1s forwards;
-}
-
-#rightSide img {
-    width: 100%;
-}
-
-#projet02 , #projet03 {
-    width: 90%;
-    margin: 4% 0;
-    transform: translateY(-50%);
-
-}
-
-#projet01 {
-    width: 90%;
-    margin: 50vh 0 4% 0;
-    transform: translateY(-50%);
-
-}
-
-#leftSide {
     width: 35%;
 }
 
 #rightSide {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    height: 100vh;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
+#rightSide a {
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    margin-left: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#projet01 {
+    background: linear-gradient(90deg, #37C1FF, #0193E8);
+}
+
+#projet02 {
+    background: #CD942D;
+}
+
+#projet03 {
+    background: #F50520;
+}
+
+#goodeedLogo {
+    width: 40%;
+    z-index: 1;
+}
+
+#peaceGirl {
+    width: 550px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#nomadsLogo {
+    width: 40%;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+#nomadsPlate {
+    width: 850px;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50vh;
+    animation: rotate 4s infinite linear;
+}
+
+#springLogo {
+    width: 45%;
+}
+
+#walkingBoy {
+    position: absolute;
+    right: 0;
+}
 
 
 
