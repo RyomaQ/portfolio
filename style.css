@@ -330,5 +330,85 @@ h1 {
     width: 80%;
 }
 
+@media screen and (max-width : 1023px) {
+    
+    #bonjour , #jeSuis{
+        font-size: 13vw;
+    }
+
+    #creative-designer {
+        font-size: 18vw;
+    }
+
+    #verticalNav1 {
+        margin-left: 90%;
+    }
+
+    #p-main {
+        flex-direction: column-reverse;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+    }
+
+    #p-also , #p-about{
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    #p-name {
+        font-size: 42px;
+        font-weight: 200;
+    }
+
+    #p-age {
+        flex: 0;
+        opacity: 0;
+    }
+
+    #p-skills {
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: -40vh;
+        border: none;
+        font-size: 16px;
+        flex: inherit;
+        border-top: 1px solid black;
+        padding-top: 20px;
+    }
+
+    #p-skills ul {
+        line-height: 26px;
+        font-size: 16px;
+        margin-right: 4%;
+    }
+
+    #p-picture {
+        height: 42vh;
+        border-right: none;
+    }
+
+    #p-text {
+        flex: inherit;
+    }
+
+    #p-text div {
+        padding: 20px;
+    }
+
+    #p-picture img {
+        height: 45vh;
+        width: fit-content;
+    }
+
+    #p-description {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+    }
+
+    #p-age {
+        display: none;
+    }
+}
 
 
