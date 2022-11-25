@@ -354,11 +354,14 @@ h1 {
     #p-also , #p-about{
         font-size: 16px;
         line-height: 22px;
+        flex: 1;
+        border-bottom: 1px solid black;
     }
 
     #p-name {
         font-size: 42px;
         font-weight: 200;
+        border: none;
     }
 
     #p-age {
@@ -369,41 +372,49 @@ h1 {
     #p-skills {
         justify-content: flex-end;
         width: 100%;
-        margin-bottom: -40vh;
         border: none;
         font-size: 16px;
-        flex: inherit;
-        border-top: 1px solid black;
-        padding-top: 20px;
+        flex: 4;
     }
 
     #p-skills ul {
-        line-height: 26px;
+        line-height: inherit;
         font-size: 16px;
         margin-right: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 90%;
+    }
+
+    #p-text {
+        flex: inherit;
+        flex: 5;
     }
 
     #p-picture {
         height: 42vh;
         border-right: none;
-    }
-
-    #p-text {
-        flex: inherit;
-    }
-
-    #p-text div {
-        padding: 20px;
+        /* border-top: 1px solid black; */
+        position: absolute;
+        width: 100%;
     }
 
     #p-picture img {
-        height: 45vh;
-        width: fit-content;
+        height: inherit;
+        width: auto;
     }
 
     #p-description {
         flex-direction: column-reverse;
         justify-content: space-evenly;
+        flex: 10;
+        height: auto;
+    }
+
+    #p-titles {
+        flex: 1;
+        height: auto;
     }
 
     #p-age {
