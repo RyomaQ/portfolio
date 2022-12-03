@@ -48,10 +48,10 @@ if (window.matchMedia("(min-width: 1023px)").matches) {
     bonjour.classList.add("fadeIn");
     setTimeout(() => {
         jeSuis.classList.add("fadeIn");
-    }, 600)
+    }, 1000)
     setTimeout(() => {
         creativeDesigner.classList.add("fadeIn");
-    }, 1300)
+    }, 2000)
 
     let value1 = 0;
     let value2 = 0;
@@ -59,7 +59,7 @@ if (window.matchMedia("(min-width: 1023px)").matches) {
         if(value1 != 1) {
             console.log('rx : ' + RX);
             if(RX != 600) {
-                RX = RX + 5 ;
+                RX = RX + 5;
             } else if (RX == 600) {
                 value1 = 1;
             }
@@ -71,27 +71,27 @@ if (window.matchMedia("(min-width: 1023px)").matches) {
                 value1 = 0;
             }
         }
-    }, 10)
+    }, 50)
 
     setInterval(() => {
         if(value2 != 1) {
             console.log('ry : ' + RY);
             if(RY != 600) {
-                RY = RY + 5 ;
+                RY = RY + 5;
             } else if (RY == 600) {
                 value2 = 1;
             }
         } else if (value2 != 0) {
             console.log('ry : ' + RY);
             if(RY != 0) {
-                RY = RY - 5 ;
+                RY = RY - 5;
             } else if (RY == 0) {
                 value2 = 0;
             }
         }
         gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RY + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RY * 50 / windowHeight)) + ", 100%, 50%))";
         
-      }, 50)
+      }, 100)
 
     //   setInterval(() => {
     //     if (value1 != 0) {
