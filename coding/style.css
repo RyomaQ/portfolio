@@ -101,44 +101,21 @@ p {
 
 
 
-
-
-hr {
-    width: 90%;
-    height: 1px;
-    background-color: #252525;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20vh;
-}
-
-footer {
-    width: 85%;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#monEmail {
-    color: #252525;
-    text-decoration: none;
-    font-family: poppins;
-    font-size: 1.3vw;
-}
-
-#socials {
-    display: flex;
-    gap: 20px;
-}
-
-#socials img {
-    width: 60px;
-}
-
-
 .fadeOut {
     animation: fadeOut 0.5s forwards;
+}
+
+@media screen and (max-width : 1023px) {
+    #leftSide {
+        display: none;
+    }
+
+    #rightSide {
+        width: 100%;
+        align-items: center;
+    }
+
+    #projet01 {
+        margin-top: 30vh;
+    }
 }

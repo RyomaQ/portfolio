@@ -111,7 +111,7 @@ h1 {
 
 /* Section 02 */
 #section02 {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #E1E1E1;
     display: flex;
     justify-content: center;
@@ -245,8 +245,8 @@ h1 {
     border-radius: 5px;
     background-color: #00000000;
     border: 1px solid black;
-    padding: 0 5%;
-    font-size: 20px;
+    padding: 5px 5%;
+    font-size: 25px;
     font-family: var(--text);
 }
 
@@ -257,15 +257,16 @@ h1 {
     border: 1px solid black;
     display: flex;
     align-items: flex-start;
-    font-size: 20px;
+    font-size: 26px;
     font-family: var(--text);
     padding: 20px 5%;
     resize: none;
+    height: 27vh;
 }
 
 #sendBtn {
     margin-right: 5%;
-    height: 60px;
+    height: 80px;
     width: 30%;
     color: #ffffff;
     background-color: #252525;
@@ -331,22 +332,49 @@ h1 {
 }
 
 @media screen and (max-width : 1023px) {
+
+    #verticalNav1 {
+        margin-left: 94%;
+    }
+
+    .navi-line {
+        height: 80px;
+    }
+
+    .positionDot {
+        width: 20px;
+        height: 20px;
+    }
+
+    #scroll-btn {
+        z-index: 2;
+        margin-top: 80vh;
+        background: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        z-index: 1;
+    }
+
+    #creative-designer {
+        margin-bottom: 20vh;
+    }
+
+    #section02 {
+        height: auto;
+        overflow-x: hidden;
+    }
     
     #bonjour , #jeSuis{
         font-size: 13vw;
     }
 
     #creative-designer {
-        font-size: 18vw;
-    }
-
-    #verticalNav1 {
-        margin-left: 90%;
+        font-size: 25vw;
+        line-height: 90px;
     }
 
     #p-main {
-        flex-direction: column-reverse;
-        height: 100vh;
+        height: auto;
         width: 100%;
         z-index: 1;
     }
@@ -356,12 +384,14 @@ h1 {
         line-height: 22px;
         flex: 1;
         border-bottom: 1px solid black;
+        padding: 7%;
     }
 
     #p-name {
         font-size: 42px;
         font-weight: 200;
         border: none;
+        padding: unset;
     }
 
     #p-age {
@@ -375,16 +405,17 @@ h1 {
         border: none;
         font-size: 16px;
         flex: none;
+        padding: 7%;
     }
 
     #p-skills ul {
         line-height: inherit;
         font-size: 16px;
-        margin-right: 4%;
+        margin-right: 13%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: auto;
+        line-height: 32px;
     }
 
     #p-text {
@@ -393,11 +424,12 @@ h1 {
     }
 
     #p-picture {
-        height: 42vh;
+        height: 45vh;
         border-right: none;
         /* border-top: 1px solid black; */
         position: absolute;
         width: 100%;
+        bottom: 0;
     }
 
     #p-picture img {
@@ -415,11 +447,60 @@ h1 {
     #p-titles {
         flex: 1;
         height: auto;
+        align-items: center;
+        justify-content: center;
+        padding: 5%;
     }
 
     #p-age {
         display: none;
     }
+
+    #section03 {
+        flex-direction: column;
+        height: unset;
+        overflow-x: hidden;
+        padding-bottom: 30vh;
+    }
+
+     #contactForm {
+        width: 90%;
+        height: unset;
+     }
+
+     .sectionDot {
+        width: 10px;
+        height: 10px;
+     }
+
+     #nameInput , #emailInput , #messageInput {
+        width: 89%;
+        height: 60px;
+        margin: 5px 0;
+        font-size: 16px;
+     }
+
+     #messageInput {
+        height: 300px;
+     }
+
+     #contactForm h2 {
+        font-size: 8vw;
+        line-height: 11vw;
+        margin-top: 7vh;
+     }
+
+     #sendBtn {
+        width: 50%;
+        height: 60px;
+        font-weight: 400;
+        margin: 0;
+        margin-top: 5px;
+     }
+
+     #s3d2 {
+        display: none;
+     }
 }
 
 

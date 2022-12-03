@@ -194,41 +194,88 @@ p {
     right: 0;
 }
 
-
-
-
-
-hr {
-    width: 90%;
-    height: 1px;
-    color: var(--dark);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20vh;
+.responsive-titles {
+    display: none;
 }
 
-footer {
-    width: 85%;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-#monEmail {
-    color: var(--dark);
-    text-decoration: none;
-    font-family: poppins;
-    font-size: 1.3vw;
-}
+@media screen and (max-width : 1023px) {
 
-#socials {
-    display: flex;
-    gap: 20px;
-}
+    body {
+        overflow-y: auto;
+    }
 
-#socials img {
-    width: 60px;
+    #main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #leftSide {
+        display: none;
+    }
+
+    #rightSide {
+        width: 100%;
+        height: unset;
+        scroll-snap-type: unset;
+        overflow-y: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5vh;
+    }
+
+    #rightSide a {
+        width: 100%;
+        height: 40vh;
+        margin-top: 2vh;
+    }
+
+    footer {
+        display: none;
+    }
+
+    h1 {
+        font-size: 15vw;
+        line-height: 100%;
+    }
+    
+    p {
+        font-size: 4vw;
+        line-height: 146%;
+    }
+    
+    .responsive-titles {
+        display: block;
+        margin-top: 10vh;
+        width: 95%;
+    }
+
+    #vertiNav {
+        display: none;
+    }
+
+    #scroll-btns {
+        display: none;
+    }
+
+    #peaceGirl {
+        width: 250px;
+    }
+
+    #nomadsPlate {
+        width: 400px;
+        top: 10vh;
+        left: 40%;
+    }
+
+    #walkingBoy {
+        width: 100px;
+    }
+
+
+    /* footer {
+        display: none;
+    } */
+
 }

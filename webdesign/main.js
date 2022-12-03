@@ -3,8 +3,8 @@ const pages = document.querySelectorAll('.pages');
 const menu = document.querySelectorAll('.menu');
 const cursor = document.querySelector('.cursor');
 const titles = document.querySelector('#titles');
-const h1 = document.querySelector('h1');
-const description = document.querySelector('p');
+const h1 = document.querySelector('#projectTitle');
+const description = document.querySelector('#projectDescription');
 const rightSide = document.querySelector('#rightSide');
 const projet01 = document.querySelector("#projet01");
 const projet02 = document.querySelector("#projet02");
@@ -156,7 +156,7 @@ rightSide.addEventListener("scroll", () => {
             fadeIn().style.animationDirection = "reverse";
             titles.classList.remove("fadeIn");
         }, 800)
-    } else if (scrollValue() == 100){
+    } else if (scrollValue() > 100 && scrollValue() < 100.1){
         setTimeout(() => {
             fadeIn().style.animationDirection = "normal";
             titles.classList.remove("fadeIn");
@@ -169,7 +169,7 @@ rightSide.addEventListener("scroll", () => {
             fadeIn().style.animationDirection = "reverse";
             titles.classList.remove("fadeIn");
         }, 800)
-    } else if (scrollValue() == 200){
+    } else if (scrollValue() > 200 && scrollValue() < 200.1){
         setTimeout(() => {
             fadeIn().style.animationDirection = "normal";
             titles.classList.remove("fadeIn");
@@ -218,6 +218,8 @@ projetArray.forEach(e => e.addEventListener("click", function(){
         }, 400)
     } 
 }))
+
+
 
 
 $(window).load(function() {
