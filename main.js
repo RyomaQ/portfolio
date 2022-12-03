@@ -22,9 +22,27 @@ function indexInClass(collection, target) {
     }
 }
 
+let RX = 1;
+
+
+
 // Animated BG
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+if (window.matchMedia("(min-width: 1023px)").matches) {
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+        gradientBg.classList.add("fadeIn");
+        bonjour.classList.add("fadeIn");
+        setTimeout(() => {
+            jeSuis.classList.add("fadeIn");
+        }, 600)
+        setTimeout(() => {
+            creativeDesigner.classList.add("fadeIn");
+        }, 1300)
+        setTimeout(() => {
+            gradientBg.style.background = "radial-gradient(at "+ e.pageX + "px " + e.pageY + "px , hsl(" + (250 + (e.pageX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(e.pageY * 50 / windowHeight)) + ", 100%, 50%))";
+        }, 200)
+    })    
+  } else {
     gradientBg.classList.add("fadeIn");
     bonjour.classList.add("fadeIn");
     setTimeout(() => {
@@ -33,11 +51,29 @@ document.addEventListener('mousemove', e => {
     setTimeout(() => {
         creativeDesigner.classList.add("fadeIn");
     }, 1300)
-    setTimeout(() => {
-        gradientBg.style.background = "radial-gradient(at "+ e.pageX + "px " + e.pageY + "px , hsl(" + (250 + (e.pageX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(e.pageY * 50 / windowHeight)) + ", 100%, 50%))";
-    }, 200)
-    
-})
+    let value1 = 0;
+    setInterval(() => {
+        if(value1 != 1) {
+            if(RX != 600) {
+                RX ++ ;
+                gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RX + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RX * 50 / windowHeight)) + ", 100%, 50%))";
+            } else if (RX == 600) {
+                value1 = 1;
+            }
+        }
+      }, 1)
+
+      setInterval(() => {
+        if (value1 != 0) {
+            if(RX != 0) {
+                RX --;
+                gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RX + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RX * 50 / windowHeight)) + ", 100%, 50%))";
+            } else if (RX == 0) {
+                value1 = 0;
+            }
+        }
+      }, 1)
+  }
 
 // Menu BTN
 let k = 0;

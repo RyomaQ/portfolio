@@ -33,6 +33,7 @@ function onLoad() {
 
     P1Score.innerHTML = localStorage.getItem('player1score');
     P2Score.innerHTML = localStorage.getItem('player2score');    
+    
 }
 
 // A la fin de la partie
