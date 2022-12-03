@@ -226,7 +226,7 @@ for(i=0; i < 3; i++){
 
 
 // Contact form 
-if(document.referrer == "http://127.0.0.1:5500/") {
+if(document.referrer == "https://ryomaquenot.com") {
     document.querySelector("#paperPlane").classList.add("takeOff");
     document.querySelector("#remerciement").classList.add("displayThank");
 }
