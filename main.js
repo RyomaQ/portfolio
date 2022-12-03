@@ -22,7 +22,8 @@ function indexInClass(collection, target) {
     }
 }
 
-let RX = 1;
+let RX = 0;
+let RY = 0;
 
 
 
@@ -51,28 +52,64 @@ if (window.matchMedia("(min-width: 1023px)").matches) {
     setTimeout(() => {
         creativeDesigner.classList.add("fadeIn");
     }, 1300)
+
     let value1 = 0;
+    let value2 = 0;
     setInterval(() => {
         if(value1 != 1) {
+            console.log('rx : ' + RX);
             if(RX != 600) {
-                RX ++ ;
-                gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RX + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RX * 50 / windowHeight)) + ", 100%, 50%))";
+                RX = RX + 5 ;
             } else if (RX == 600) {
                 value1 = 1;
             }
-        }
-      }, 1)
-
-      setInterval(() => {
-        if (value1 != 0) {
+        } else if (value1 != 0) {
+            console.log('rx : ' + RX);
             if(RX != 0) {
-                RX --;
-                gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RX + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RX * 50 / windowHeight)) + ", 100%, 50%))";
+                RX = RX - 5;
             } else if (RX == 0) {
                 value1 = 0;
             }
         }
-      }, 1)
+    }, 10)
+
+    setInterval(() => {
+        if(value2 != 1) {
+            console.log('ry : ' + RY);
+            if(RY != 600) {
+                RY = RY + 5 ;
+            } else if (RY == 600) {
+                value2 = 1;
+            }
+        } else if (value2 != 0) {
+            console.log('ry : ' + RY);
+            if(RY != 0) {
+                RY = RY - 5 ;
+            } else if (RY == 0) {
+                value2 = 0;
+            }
+        }
+        gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RY + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RY * 50 / windowHeight)) + ", 100%, 50%))";
+        
+      }, 50)
+
+    //   setInterval(() => {
+    //     if (value1 != 0) {
+    //         console.log('rx : ' + RX);
+    //         console.log('ry : ' + RY);
+    //         if(RX != 0) {
+    //             RX = RX - 5;
+    //         } else if (RX == 0) {
+    //             value1 = 0;
+    //         }
+    //         if(RY != 0) {
+    //             RY = RY + 5 ;
+    //         } else if (RY == 0) {
+    //             value1 = 1;
+    //         }
+    //         gradientBg.style.background = "radial-gradient(at "+ RX + "px " + RY + "px , hsl(" + (250 + (RX * 50 / windowWidth)) + ", 100%, 50%), hsl(" + (120 +(RY * 50 / windowHeight)) + ", 100%, 50%))";
+    //     }
+    //   }, 10)
   }
 
 // Menu BTN
