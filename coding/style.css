@@ -41,7 +41,7 @@ body {
 }
 
 
-h1 {
+#titles h1 {
     font-family: fino, serif;
     font-size: 6vw;
     color: #252525;
@@ -50,13 +50,12 @@ h1 {
     bottom: 0;
 }
 
-p {
+#titles p {
     font-family: poppins;
     font-size: 1.1vw;
     line-height: 146%;
     color: #252525;
     margin-bottom: -20vh;
-
 }
 
 #titles {
@@ -99,10 +98,12 @@ p {
     align-items: flex-end;
 }
 
-
-
 .fadeOut {
     animation: fadeOut 0.5s forwards;
+}
+
+.responsive-titles {
+    display: none;
 }
 
 @media screen and (max-width : 1023px) {
@@ -113,9 +114,31 @@ p {
     #rightSide {
         width: 100%;
         align-items: center;
+        margin-top: 15vh;
     }
 
     #projet01 {
-        margin-top: 30vh;
+        margin: 4% 0;
+        margin-bottom: 5vh;
+    }
+
+    .projet {
+        transform: translateY(0);
+        margin-bottom: 5vh;
+    }
+
+    .responsive-titles {
+        width: 90%;
+        display: block;
+    }
+
+    .responsive-titles h1 {
+        font-family: fino, serif;
+        color: var(--dark);
+    }
+    
+    .responsive-titles p {
+        font-family: poppins;
+        color: var(--dark);
     }
 }

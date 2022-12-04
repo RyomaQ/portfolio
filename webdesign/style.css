@@ -169,20 +169,19 @@ p {
 
 @keyframes rotate {
     0% {
-        rotate: 0deg;
+        transform: rotate(0deg);
     }
     100% {
-        rotate: 360deg;
+        transform: rotate(360deg);
     }
 }
 
 #nomadsPlate {
-    width: 850px;
-    height: fit-content;
     position: absolute;
     left: 50%;
     top: 50vh;
-    animation: rotate 4s infinite linear;
+    animation: rotate 4s infinite linear; 
+    -webkit-animation: rotate 4s infinite linear; 
 }
 
 #springLogo {
@@ -272,6 +271,7 @@ p {
     #walkingBoy {
         width: 100px;
     }
+
 
 
     /* footer {

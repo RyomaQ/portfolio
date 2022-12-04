@@ -181,6 +181,10 @@
     text-decoration:line-through;
 }
 
+.mobile-nav {
+    
+}
+
 
 
 @keyframes toNav {
@@ -192,11 +196,22 @@
     }
 }
 
+@keyframes mobile-toNav {
+    from {
+
+    }
+    to {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
 .toNav {
     animation: toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
     animation-direction: normal;
     padding: 0 10px;
 }
+
 
 @keyframes displayLi {
     0% {
@@ -362,5 +377,17 @@ footer {
 @media screen and (max-width : 1023px) {
     .cursor {
         display: none;
+    }
+    
+    .toNav {
+        flex-direction: column;
+        animation: mobile-toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
+        gap: 5vh;
+
+    }
+
+    .toNav a {
+        font-size: 60px;
+        text-transform: capitalize;
     }
 }

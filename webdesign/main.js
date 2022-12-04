@@ -53,6 +53,21 @@ document.addEventListener('click', () => {
     }, 500)
 })
 
+
+// .toNav {
+//     flex-direction: column;
+//     animation: mobile-toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
+//     margin-top: 10vh;
+//     justify-content: unset;
+//     gap: 5vh;
+//     align-items: flex-end;
+// }
+
+// .toNav a {
+//     font-size: 60px;
+//     text-transform: capitalize;
+// }
+
 let k = 0;
 menuBtn.addEventListener('click', function(){
     const toNav = document.querySelector('.toNav');
@@ -63,6 +78,10 @@ menuBtn.addEventListener('click', function(){
         pages.forEach(e => e.style.display = 'block');
         menu[0].classList.toggle('undisplay');
         k++;
+        setTimeout(() => {
+            menuBtn.style.alignItems = "flex-end"
+            menuBtn.style.justifyContent = "unset"
+        }, 200)
     } else if(k == 1) {
         toNav.style.animationDirection = 'reverse'
         menuBtn.classList.remove('toNav');
@@ -73,6 +92,8 @@ menuBtn.addEventListener('click', function(){
         pages.forEach(e => e.classList.add('undisplay'));
         setTimeout(() => {
             pages.forEach(e => e.style.display = 'none');
+            menuBtn.style.justifyContent = "center"
+            menuBtn.style.alignItems = "center"
         }, 200)
         menu[0].classList.toggle('display');
         void menu[0].offsetWidth;
@@ -91,6 +112,11 @@ menuBtn.addEventListener('click', function(){
         void menu[0].offsetWidth;
         menu[0].classList.toggle('undisplay');
         k=k+1;
+        setTimeout(() => {
+            menuBtn.style.alignItems = "flex-end"
+            menuBtn.style.justifyContent = "unset"
+        }, 200)
+        
     }
 })
 
