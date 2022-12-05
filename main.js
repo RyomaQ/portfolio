@@ -29,8 +29,6 @@ menuBtn.addEventListener('click', function(){
         menuBtn.classList.toggle('toNav')
         pages.forEach(e => e.classList.toggle('display'));
         pages.forEach(e => e.style.display = 'block');
-        closeMenuBtn.classList.toggle("display");
-        closeMenuBtn.style.display = "block";
         menu[0].classList.toggle('undisplay');
         k++;
         if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -40,6 +38,8 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.marginTop = "0";
                 menuBtn.style.paddingTop = "5vh"
                 menuBtn.style.borderRadius = "0"
+                closeMenuBtn.classList.toggle("display");
+                closeMenuBtn.style.display = "block";
             }, 200)
         }
     } else if(k == 1) {
@@ -48,10 +48,8 @@ menuBtn.addEventListener('click', function(){
         void menuBtn.offsetWidth;
         menuBtn.classList.add('toNav');
         pages.forEach(e => e.classList.toggle('display'));
-        closeMenuBtn.classList.toggle("display");
         void pages.forEach(e => e.offsetWidth);
         pages.forEach(e => e.classList.add('undisplay'));
-        closeMenuBtn.style.display = "none";
         setTimeout(() => {
             pages.forEach(e => e.style.display = 'none');
             if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -60,6 +58,8 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.marginTop = "2vh";
                 menuBtn.style.paddingTop = "0"
                 menuBtn.style.borderRadius = "50px"
+                closeMenuBtn.classList.toggle("display");
+                closeMenuBtn.style.display = "none";
             }
         }, 200)
         menu[0].classList.toggle('display');
@@ -73,9 +73,7 @@ menuBtn.addEventListener('click', function(){
         menuBtn.classList.add('toNav');
         pages.forEach(e => e.style.display = 'block');
         pages.forEach(e => e.classList.remove('undisplay'));
-        closeMenuBtn.classList.toggle("display");
         void pages.forEach(e => e.offsetWidth);
-        closeMenuBtn.style.display = "block";
         pages.forEach(e => e.classList.add('display'));
         menu[0].classList.toggle('display');
         void menu[0].offsetWidth;
@@ -88,6 +86,8 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.marginTop = "0";
                 menuBtn.style.paddingTop = "5vh";
                 menuBtn.style.borderRadius = "0"
+                closeMenuBtn.classList.toggle("display");
+                closeMenuBtn.style.display = "block";
             }, 200)
         }
         
