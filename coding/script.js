@@ -14,24 +14,7 @@ let windowWidth = window.innerWidth;
 let descPos = description.getBoundingClientRect().bottom;
 
 
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
-})
 
-document.addEventListener('click', () => {
-    cursor.classList.add("expand");
-    setTimeout(() => {
-        cursor.classList.remove("expand");
-    }, 500)
-})
-
-// retourne l'index
-function indexInClass(collection, target) {
-    for (var i = 0; i < collection.length; i++) {
-        if (collection[i] == target)
-            return i;
-    }
-}
 
 const whiteFade = document.querySelector('#whiteFade');
 
@@ -61,48 +44,6 @@ projetArray.forEach(e => e.addEventListener("click", function(){
     }
 
 }))
-
-
-let k = 0;
-menuBtn.addEventListener('click', function(){
-    const toNav = document.querySelector('.toNav');
-    const display = document.querySelectorAll('.display');
-    if(k == 0 && menuBtn.classList.length == 0){
-        menuBtn.classList.toggle('toNav')
-        pages.forEach(e => e.classList.add('display'));
-        pages.forEach(e => e.style.display = 'block');
-        menu[0].classList.toggle('undisplay');
-        k++;
-    } else if(k == 1) {
-        toNav.style.animationDirection = 'reverse'
-        menuBtn.classList.remove('toNav');
-        void menuBtn.offsetWidth;
-        menuBtn.classList.add('toNav');
-        pages.forEach(e => e.classList.remove('display'));
-        void pages.forEach(e => e.offsetWidth);
-        pages.forEach(e => e.classList.add('undisplay'));
-        setTimeout(() => {
-            pages.forEach(e => e.style.display = 'none');
-        }, 200)
-        menu[0].classList.toggle('display');
-        void menu[0].offsetWidth;
-        menu[0].classList.toggle('undisplay');
-        k--;
-    } else if(k == 0 && menuBtn.classList.length == 1) {
-        toNav.style.animationDirection = 'normal';
-        menuBtn.classList.remove('toNav');
-        void menuBtn.offsetWidth;
-        menuBtn.classList.add('toNav');
-        pages.forEach(e => e.style.display = 'block');
-        pages.forEach(e => e.classList.remove('undisplay'));
-        void pages.forEach(e => e.offsetWidth);
-        pages.forEach(e => e.classList.add('display'));
-        menu[0].classList.toggle('display');
-        void menu[0].offsetWidth;
-        menu[0].classList.toggle('undisplay');
-        k=k+1;
-    }
-})
 
 // Avoir le centre en y d'une div
 function projectCenter(projet) {

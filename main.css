@@ -116,7 +116,7 @@
 
 /* Navigation */
 #menu-btn , #scroll-btn {
-    width: 120px;
+    width: 130px;
     height: 70px;
     background-color: #ffffff4b;
     box-shadow: 5px 5px 10px #00000028;
@@ -137,10 +137,7 @@
     margin-top: 2vh;
     color: #ffffff;
     font-weight: 500;
-}
-
-#menu-btn:hover , #scroll-btn:hover {
-    background-color: #d9d9d9e7;
+    padding: 0 10px;
 }
 
 #scroll-btn {
@@ -181,15 +178,9 @@
     text-decoration:line-through;
 }
 
-.mobile-nav {
-    
-}
-
-
-
 @keyframes toNav {
     from {
-
+        width: 130px;
     }
     to {
         width: 70%;
@@ -198,7 +189,7 @@
 
 @keyframes mobile-toNav {
     from {
-
+        width: 130px;
     }
     to {
         width: 100%;
@@ -208,7 +199,6 @@
 
 .toNav {
     animation-direction: normal;
-    padding: 0 10px;
 }
 
 
@@ -372,9 +362,24 @@ footer {
     width: 60px;
 }
 
+#closeMenu {
+    display: none;
+    background: none;
+    border: none;
+}
+
+#closeMenu img {
+    width: 60%;
+    float: right;
+}
+
 @media screen and (min-width : 1023px) {
     .toNav {
         animation: toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
+    }
+
+    #menu-btn:hover , #scroll-btn:hover {
+        background-color: #d9d9d9e7;
     }
 }
 
@@ -388,11 +393,11 @@ footer {
         flex-direction: column;
         animation: mobile-toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
         gap: 0;
-
     }
 
     .toNav a {
         font-size: 60px;
         text-transform: capitalize;
     }
+
 }

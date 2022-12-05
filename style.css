@@ -355,6 +355,10 @@ h1 {
         z-index: 1;
     }
 
+    #menu-btn {
+        z-index: 2;
+    }
+
     #creative-designer {
         margin-bottom: 20vh;
     }
@@ -362,6 +366,7 @@ h1 {
     #section02 {
         height: auto;
         overflow-x: hidden;
+        z-index: 1;
     }
     
     #bonjour , #jeSuis{
@@ -376,7 +381,6 @@ h1 {
     #p-main {
         height: auto;
         width: 100%;
-        z-index: 1;
     }
 
     #p-also , #p-about{
