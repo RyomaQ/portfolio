@@ -387,7 +387,7 @@ footer {
     .toNav {
         flex-direction: column;
         animation: mobile-toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
-        gap: 5vh;
+        gap: 0;
 
     }
 

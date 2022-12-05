@@ -83,9 +83,7 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.alignItems = "flex-end";
                 menuBtn.style.justifyContent = "unset";
                 menuBtn.style.marginTop = "0";
-                menuBtn.style.paddingTop = "5vh";
-                menuBtn.style.justifyContent = "unset";
-                menuBtn.style.backgroundColor = "red"
+                menuBtn.style.paddingTop = "5vh"
             }, 200)
         }
     } else if(k == 1) {
@@ -102,8 +100,7 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.justifyContent = "center"
                 menuBtn.style.alignItems = "center"
                 menuBtn.style.marginTop = "2vh";
-                menuBtn.style.paddingTop = "0";
-                menuBtn.style.justifyContent = "center"
+                menuBtn.style.paddingTop = "0"
             }
         }, 200)
         menu[0].classList.toggle('display');
@@ -129,7 +126,6 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.justifyContent = "unset"
                 menuBtn.style.marginTop = "0";
                 menuBtn.style.paddingTop = "5vh";
-                menuBtn.style.justifyContent = "unset"
             }, 200)
         }
         
