@@ -207,7 +207,6 @@
 }
 
 .toNav {
-    animation: toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
     animation-direction: normal;
     padding: 0 10px;
 }
@@ -371,6 +370,12 @@ footer {
 
 #socials img {
     width: 60px;
+}
+
+@media screen and (min-width : 1023px) {
+    .toNav {
+        animation: toNav 0.5s cubic-bezier(.94,-0.01,.27,.99) forwards;
+    }
 }
 
 

@@ -78,10 +78,12 @@ menuBtn.addEventListener('click', function(){
         pages.forEach(e => e.style.display = 'block');
         menu[0].classList.toggle('undisplay');
         k++;
+        if (window.matchMedia("(max-width: 1023px)").matches) {
         setTimeout(() => {
-            menuBtn.style.alignItems = "flex-end"
-            menuBtn.style.justifyContent = "unset"
-        }, 200)
+                menuBtn.style.alignItems = "flex-end"
+                menuBtn.style.justifyContent = "unset"
+            }, 200)
+        }
     } else if(k == 1) {
         toNav.style.animationDirection = 'reverse'
         menuBtn.classList.remove('toNav');
@@ -92,8 +94,10 @@ menuBtn.addEventListener('click', function(){
         pages.forEach(e => e.classList.add('undisplay'));
         setTimeout(() => {
             pages.forEach(e => e.style.display = 'none');
-            menuBtn.style.justifyContent = "center"
-            menuBtn.style.alignItems = "center"
+            if (window.matchMedia("(max-width: 1023px)").matches) {
+                menuBtn.style.justifyContent = "center"
+                menuBtn.style.alignItems = "center"
+            }
         }, 200)
         menu[0].classList.toggle('display');
         void menu[0].offsetWidth;
@@ -112,10 +116,12 @@ menuBtn.addEventListener('click', function(){
         void menu[0].offsetWidth;
         menu[0].classList.toggle('undisplay');
         k=k+1;
-        setTimeout(() => {
-            menuBtn.style.alignItems = "flex-end"
-            menuBtn.style.justifyContent = "unset"
-        }, 200)
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+            setTimeout(() => {
+                menuBtn.style.alignItems = "flex-end"
+                menuBtn.style.justifyContent = "unset"
+            }, 200)
+        }
         
     }
 })
