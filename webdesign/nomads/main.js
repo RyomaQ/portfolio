@@ -27,7 +27,6 @@ videoItems.forEach(function(videoItem) {
     video.addEventListener('loadedmetadata', function(e){
         var videoAspectRatio = video.videoWidth / video.videoHeight;
         videoItem.style.flex = videoAspectRatio + ' 1 0%';
-        videoItem.play()
     });
 
 });

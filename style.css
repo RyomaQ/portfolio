@@ -23,6 +23,10 @@ h1 {
     z-index: 1;
 }
 
+#menu-btn {
+    z-index: 2;
+}
+
 .sectionDot {
     height: 20px;
     width: 20px;
@@ -222,11 +226,12 @@ h1 {
     align-items: center;
     background-image: url(img/grainy-texture.jpg);
     z-index: 1;
+    padding-bottom: 20vh;
 }
 
 #contactForm {
     width: 40%;
-    height: 70vh;
+    gap: 20px;
     flex-direction: column;
     justify-content: space-between;
     display: flex;
@@ -339,17 +344,17 @@ footer {
 @media screen and (max-width : 1023px) {
 
     #verticalNav1 {
-        margin-left: 94%;
+        display: none;
     }
 
-    .navi-line {
+    /* .navi-line {
         height: 80px;
     }
 
     .positionDot {
         width: 20px;
         height: 20px;
-    }
+    } */
 
     #scroll-btn {
         z-index: 2;
@@ -379,14 +384,14 @@ footer {
         width: 50%;
     }
 
-    #menu-btn {
-        z-index: 2;
-    }
-
     #section02 {
         height: auto;
         overflow-x: hidden;
         z-index: 1;
+    }
+
+    #section01 {
+        justify-content: center;
     }
     
     #bonjour , #jeSuis{
@@ -395,8 +400,9 @@ footer {
 
     #creative-designer {
         font-size: 25vw;
-        line-height: 90px;
-        margin-bottom: 30vh;
+        line-height: 90%;
+        margin-bottom: 0;
+        margin-left: 1%;
     }
 
     #p-main {

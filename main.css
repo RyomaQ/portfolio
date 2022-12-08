@@ -157,6 +157,7 @@
     position: absolute;
     /* filter: drop-shadow(1px 1px 10px #000000a1); */
     color: var(--dark);
+    margin-top: 5px;
 }
 
 #menu-btn li {

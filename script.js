@@ -111,9 +111,14 @@ function getScrollValue() {
 // Vertical Nav
 document.addEventListener('scroll', () => {
     // let scrollValue = getScrollValue();
-    positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
-    console.log(window.pageYOffset/6)
-    console.log()
+
+    
+console.log(window.pageYOffset)
+    if(window.pageYOffset > 1920) {
+        positionDot[0].style.marginTop = '320px';
+    } else {
+        positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
+    }
     let scrollValue = window.pageYOffset*100/windowHeight;
 
     if(window.pageYOffset < 200 ) {
@@ -131,24 +136,24 @@ document.addEventListener('scroll', () => {
     }
 })
 
-document.addEventListener('scroll', () => {
-    positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
-    let scrollValue = window.pageYOffset*100/windowHeight;
+// document.addEventListener('scroll', () => {
+//     positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
+//     let scrollValue = window.pageYOffset*100/windowHeight;
 
-    if(window.pageYOffset < 200 ) {
-        positionDot[0].style.scale = 1 - window.pageYOffset*(0.7/200);
-    } else if (window.pageYOffset > 200 && window.pageYOffset < 630 || window.pageYOffset > 1030 && window.pageYOffset < 1660) {
-        positionDot[0].style.scale = 0.3;
-    } else if (window.pageYOffset > 780 && window.pageYOffset < 880) {
-        positionDot[0].style.scale = 0.3-(window.pageYOffset-780)*(-0.7/100);
-    } else if (window.pageYOffset > 880 && window.pageYOffset < 980) {
-        positionDot[0].style.scale = 1;
-    } else if (window.pageYOffset > 980 && window.pageYOffset < 1080) {
-        positionDot[0].style.scale = 1+(window.pageYOffset-980)*(-0.7/100);
-    } else if (window.pageYOffset > 1660 && window.pageYOffset < 1860) {
-        positionDot[0].style.scale = 0.3-(window.pageYOffset-1660)*(-0.7/200);
-    }
-})
+//     if(window.pageYOffset < 200 ) {
+//         positionDot[0].style.scale = 1 - window.pageYOffset*(0.7/200);
+//     } else if (window.pageYOffset > 200 && window.pageYOffset < 630 || window.pageYOffset > 1030 && window.pageYOffset < 1660) {
+//         positionDot[0].style.scale = 0.3;
+//     } else if (window.pageYOffset > 780 && window.pageYOffset < 880) {
+//         positionDot[0].style.scale = 0.3-(window.pageYOffset-780)*(-0.7/100);
+//     } else if (window.pageYOffset > 880 && window.pageYOffset < 980) {
+//         positionDot[0].style.scale = 1;
+//     } else if (window.pageYOffset > 980 && window.pageYOffset < 1080) {
+//         positionDot[0].style.scale = 1+(window.pageYOffset-980)*(-0.7/100);
+//     } else if (window.pageYOffset > 1660 && window.pageYOffset < 1860) {
+//         positionDot[0].style.scale = 0.3-(window.pageYOffset-1660)*(-0.7/200);
+//     }
+// })
 
 
 for(i=0; i < 3; i++){

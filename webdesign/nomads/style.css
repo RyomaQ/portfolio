@@ -113,11 +113,14 @@
 .design-description02 {
     font-size: 2.3vw;
     line-height: 120%;
-    margin-top: 5vh;
 }
 
 #section02 {
-    width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
 }
 
 .image-gallery {
@@ -269,6 +272,7 @@
 
 #section07 img {
     width: 70%;
+    margin-bottom: 30vh;
 }
 
 @media screen and (max-width : 1023px) {
@@ -320,5 +324,56 @@
         animation: none;
     }
 
+    .image-gallery {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+    }
 
+    #section03 {
+        margin-top: 10vh;
+    }
+
+    #section03 img {
+        width: 90%;
+        padding: 10vh 0;
+    }
+
+    #section04 {
+        margin: 35vh 0;
+    }
+
+    #section04 div {
+        background: none;
+    }
+
+    #section05 {
+        overflow: hidden;
+    }
+
+    #section05 video:nth-child(1) {
+        width: 95%;
+    }
+
+    #section05 video:nth-child(2) {
+        width: unset;
+    }
+
+    #section06 {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    #section06 img:nth-child(1) , #section06 img:nth-child(2) , #section06 img:nth-child(3) {
+        margin: 0;
+        width: 90%;
+    }
+
+    #section06 img {
+        width: 95%;
+    }
+
+    #section07 img {
+        width: 95%;
+    }
 }
