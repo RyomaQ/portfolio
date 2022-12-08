@@ -197,6 +197,26 @@ p {
     display: none;
 }
 
+#openProject {
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #24afff;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: var(--text);
+    margin-top: 15px;
+    transition: 0.3s;
+    box-shadow: 5px 5px 10px #0000001f;
+}
+
+#openProject:hover {
+    opacity: 0.7;
+    scale: 0.93;
+}
+
 
 @media screen and (max-width : 1023px) {
 

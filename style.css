@@ -332,6 +332,10 @@ h1 {
     width: 80%;
 }
 
+footer {
+    top: 99vh;
+}
+
 @media screen and (max-width : 1023px) {
 
     #verticalNav1 {
@@ -358,20 +362,16 @@ h1 {
     }
 
     @keyframes jumpingArrow {
-        0% , 20% , 100% {
-            margin-top: 80vh;
+        0% , 20% , 40% , 100% {
+            margin-top: 76vh;
         }
 
         10% {
-            margin-top: 84vh;
+            margin-top: 80vh;
         }
 
         30% {
-            margin-top: 83vh;
-        }
-
-        40% {
-            margin-top: 80vh;
+            margin-top: 79vh;
         }
     }
 
@@ -381,10 +381,6 @@ h1 {
 
     #menu-btn {
         z-index: 2;
-    }
-
-    #creative-designer {
-        margin-bottom: 25vh;
     }
 
     #section02 {
@@ -400,6 +396,7 @@ h1 {
     #creative-designer {
         font-size: 25vw;
         line-height: 90px;
+        margin-bottom: 30vh;
     }
 
     #p-main {

@@ -21,3 +21,24 @@ function exit() {
         window.location = '../index.html'
     }, 1000)
 }
+
+var videoItems = document.querySelectorAll('.video-item');
+videoItems.forEach(function(videoItem) {  
+    var video = videoItem.querySelector('video');
+    video.addEventListener('loadedmetadata', function(e){
+        var videoAspectRatio = video.videoWidth / video.videoHeight;
+        videoItem.style.flex = videoAspectRatio + ' 1 0%';
+        videoItem.play();
+    });
+
+});
+
+var imageItems = document.querySelectorAll('.image-item');
+imageItems.forEach(function(imageItem) {
+  var img = imageItem.querySelector('img');
+  var imgAspectRatio = img.naturalWidth / img.naturalHeight;
+  
+  imageItem.style.flex = imgAspectRatio + ' 1 0%';
+});
+
+

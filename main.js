@@ -36,10 +36,10 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.alignItems = "flex-end";
                 menuBtn.style.justifyContent = "unset";
                 menuBtn.style.marginTop = "0";
-                menuBtn.style.paddingTop = "5vh"
+                menuBtn.style.paddingTop = "3vh"
                 menuBtn.style.borderRadius = "0"
                 closeMenuBtn.classList.toggle("display");
-                closeMenuBtn.style.display = "block";
+                closeMenuBtn.style.display = "flex";
             }, 200)
         }
     } else if(k == 1) {
@@ -84,10 +84,10 @@ menuBtn.addEventListener('click', function(){
                 menuBtn.style.alignItems = "flex-end"
                 menuBtn.style.justifyContent = "unset"
                 menuBtn.style.marginTop = "0";
-                menuBtn.style.paddingTop = "5vh";
+                menuBtn.style.paddingTop = "3vh";
                 menuBtn.style.borderRadius = "0"
                 closeMenuBtn.classList.toggle("display");
-                closeMenuBtn.style.display = "block";
+                closeMenuBtn.style.display = "flex";
             }, 200)
         }
         

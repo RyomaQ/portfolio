@@ -11,6 +11,7 @@ const sectionDot = document.querySelectorAll(".sectionDot");
 const verticalNav = document.querySelector('#verticalNav');
 const s2 = document.querySelector("#section02");
 const s3 = document.querySelector("#section03");
+const bodyElement = document.querySelector("body");
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
@@ -101,9 +102,35 @@ function scrollFunction1() {
 function getVerticalScrollPercentage( elm ){
     var p = elm.parentNode
     return (elm.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100
-  }
+}
+
+function getScrollValue() {
+    return bodyElement.scrollTop*100/windowHeight;
+}
 
 // Vertical Nav
+document.addEventListener('scroll', () => {
+    // let scrollValue = getScrollValue();
+    positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
+    console.log(window.pageYOffset/6)
+    console.log()
+    let scrollValue = window.pageYOffset*100/windowHeight;
+
+    if(window.pageYOffset < 200 ) {
+        positionDot[0].style.scale = 1 - window.pageYOffset*(0.7/200);
+    } else if (window.pageYOffset > 200 && window.pageYOffset < 630 || window.pageYOffset > 1030 && window.pageYOffset < 1660) {
+        positionDot[0].style.scale = 0.3;
+    } else if (window.pageYOffset > 780 && window.pageYOffset < 880) {
+        positionDot[0].style.scale = 0.3-(window.pageYOffset-780)*(-0.7/100);
+    } else if (window.pageYOffset > 880 && window.pageYOffset < 980) {
+        positionDot[0].style.scale = 1;
+    } else if (window.pageYOffset > 980 && window.pageYOffset < 1080) {
+        positionDot[0].style.scale = 1+(window.pageYOffset-980)*(-0.7/100);
+    } else if (window.pageYOffset > 1660 && window.pageYOffset < 1860) {
+        positionDot[0].style.scale = 0.3-(window.pageYOffset-1660)*(-0.7/200);
+    }
+})
+
 document.addEventListener('scroll', () => {
     positionDot[0].style.marginTop = (window.pageYOffset/6) + 'px';
     let scrollValue = window.pageYOffset*100/windowHeight;

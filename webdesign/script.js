@@ -9,7 +9,12 @@ const rightSide = document.querySelector('#rightSide');
 const projet01 = document.querySelector("#projet01");
 const projet02 = document.querySelector("#projet02");
 const projet03 = document.querySelector("#projet03");
-const dotNav = document.querySelectorAll(".navDot")
+const dotNav = document.querySelectorAll(".navDot");
+const openProject = document.querySelector("#openProject");
+const openProjectLink = document.querySelector("#openProjectLink");
+const projet = document.querySelectorAll(".projet");
+const projetArray = Array.from(projet);
+const whiteFade = document.querySelector('#whiteFade');
 let windowHeight = window.innerHeight;
 
 
@@ -21,20 +26,21 @@ function indexInClass(collection, target) {
 }
 
 dotNav.forEach(e => e.addEventListener("click", function(){
-    if(indexInClass(dotNav, e) == 0) {
-        projet01.scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-            inline: 'start'
-        });
-    } else if(indexInClass(dotNav, e) == 1) {
-        projet02.scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-            inline: 'start'
-        });
-    } else if(indexInClass(dotNav, e) == 2) {
-        projet03.scrollIntoView({
+    let projectToScrollTo;
+    switch(indexInClass(dotNav, e)){
+        case 0:
+            projectToScrollTo = projet01;
+        break;
+        case 1:
+            projectToScrollTo = projet02;
+        break;
+        case 2:
+            projectToScrollTo = projet03;
+        break;
+    }
+
+    if(projectToScrollTo){
+        projectToScrollTo.scrollIntoView({
             block: 'start',
             behavior: 'smooth',
             inline: 'start'
@@ -43,16 +49,12 @@ dotNav.forEach(e => e.addEventListener("click", function(){
 }))
 
 
-
-
-
-
-function scrollValue() {
+function getScrollValue() {
     return rightSide.scrollTop*100/windowHeight;
 }
 
 function scrollFunction1() {
-    if(scrollValue() <  50){
+    if(getScrollValue() <  50){
         projet02.scrollIntoView({
             block: 'start',
             behavior: 'smooth',
@@ -68,7 +70,7 @@ function scrollFunction1() {
 }
 
 function scrollFunction2() {
-    if(scrollValue() <  200){
+    if(getScrollValue() <  200){
         projet01.scrollIntoView({
             block: 'start',
             behavior: 'smooth',
@@ -91,71 +93,61 @@ function scrollFunction2() {
 function fadeIn() {
     return document.querySelector('.fadeIn')
 }
+ function manageProjectTitleDisplay(subject, descr, color, link, target) {
+    fadeIn().style.animationDirection = "normal";
+    titles.classList.remove("fadeIn");
+    void titles.offsetWidth;
+    titles.classList.add("fadeIn");
+    h1.innerHTML = subject;
+    description.innerHTML = descr;
+    openProject.style.backgroundColor = color;
+    openProjectLink.href = link;
+    openProjectLink.target = target;
+}
 
+function reverseProjectTitleDisplay() {
+    fadeIn().style.animationDirection = "reverse";
+    titles.classList.remove("fadeIn");
+}
 
 rightSide.addEventListener("scroll", () => {
     titles.classList.add("fadeIn");
-    console.log(scrollValue())
-    if(scrollValue() == 0) {
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "normal";
-            titles.classList.remove("fadeIn");
-            void titles.offsetWidth;
-            titles.classList.add("fadeIn");
-            h1.innerHTML = "Stage";
-            description.innerHTML = "Goodeed invente les solutions de demain de collecte de dons en ligne pour aider les ONG à trouver de nouvelles sources de financements.";
-        }, 300)
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "reverse";
-            titles.classList.remove("fadeIn");
-        }, 800)
-    } else if (scrollValue() > 100 && scrollValue() < 100.1){
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "normal";
-            titles.classList.remove("fadeIn");
-            void titles.offsetWidth;
-            titles.classList.add("fadeIn");
-            h1.innerHTML = "Stage"
-            description.innerHTML = "Nomad's est un restaurant situé au cœur de la place du marché Saint-Honoré. Leur cuisine comporte une multitude d’influences culinaires, tant méditerranéennes qu’asiatiques. Ma mission principale durant ce stage a été de refaire de A à Z l'ancien site internet.";
-        }, 300)
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "reverse";
-            titles.classList.remove("fadeIn");
-        }, 800)
-    } else if (scrollValue() > 200 && scrollValue() < 200.1){
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "normal";
-            titles.classList.remove("fadeIn");
-            void titles.offsetWidth;
-            titles.classList.add("fadeIn");
-            h1.innerHTML = "Site Web"
-            description.innerHTML = "Spring&Co mènent des études ouvertes et collaboratives pour bouger les lignes du marketing développement et être en affinité avec l’époque et ses enjeux. J'ai eu la chance d'être en charge de la refonte de leur site web.";
-        }, 300)
-        setTimeout(() => {
-            fadeIn().style.animationDirection = "reverse";
-            titles.classList.remove("fadeIn");
-        }, 800)
+    let scrollValue = getScrollValue();
+    if(scrollValue == 0) {
+        setTimeout(
+            manageProjectTitleDisplay(
+                "Stage", 
+                "Goodeed invente les solutions de demain de collecte de dons en ligne pour aider les ONG à trouver de nouvelles sources de financements.", "#24afff", "goodeed/index.html", ""), 300);
+        setTimeout(reverseProjectTitleDisplay(), 800);
+    } else if (scrollValue > 99.9 && scrollValue < 100.1){
+        setTimeout(
+            manageProjectTitleDisplay(
+                "Stage", 
+                "Nomad's est un restaurant situé au cœur de la place du marché Saint-Honoré. Leur cuisine comporte une multitude d’influences culinaires, tant méditerranéennes qu’asiatiques. Ma mission principale durant ce stage a été de refaire de A à Z l'ancien site internet.", "#CD942D", "nomads/index.html", ""), 300);
+        setTimeout(reverseProjectTitleDisplay(), 800);
+    } else if (scrollValue > 199.9 && scrollValue < 200.1){
+        setTimeout(
+            manageProjectTitleDisplay(
+                "Site Web", 
+                "Spring&Co mènent des études ouvertes et collaboratives pour bouger les lignes du marketing développement et être en affinité avec l’époque et ses enjeux. J'ai eu la chance d'être en charge de la refonte de leur site web.", "#FB0000", "nomads/index.html", "_blank"), 300);
+        setTimeout(reverseProjectTitleDisplay(), 800);
     }
 
     // Dot position 
-    if(scrollValue() < 50) {
-        dotNav[0].style.backgroundColor = "#252525"
-        dotNav[1].style.backgroundColor = "#ffffff9f"
-        dotNav[2].style.backgroundColor = "#ffffff9f"
-    } else if (scrollValue() > 50 && scrollValue() < 150) {
-        dotNav[0].style.backgroundColor = "#ffffff9f"
-        dotNav[1].style.backgroundColor = "#252525"
-        dotNav[2].style.backgroundColor = "#ffffff9f"
-    } else if (scrollValue() > 15) {
-        dotNav[0].style.backgroundColor = "#ffffff9f"
-        dotNav[1].style.backgroundColor = "#ffffff9f"
-        dotNav[2].style.backgroundColor = "#252525"
-    }
-})
 
-const projet = document.querySelectorAll(".projet");
-const projetArray = Array.from(projet);
-const whiteFade = document.querySelector('#whiteFade');
+    for(var i = 0; i < 3 ; i++){
+        dotNav[i].style.backgroundColor = "#ffffff9f";
+    }
+    let indexForBlack;
+    if(scrollValue < 50) {
+        indexForBlack = 0;
+    } else if (scrollValue > 50 && scrollValue < 150) {
+        indexForBlack = 1;
+    } else if (scrollValue > 15) { 
+        indexForBlack = 2;
+    }
+    dotNav[indexForBlack].style.backgroundColor = "#252525";
+});
 
 projetArray.forEach(e => e.addEventListener("click", function(){
 
@@ -170,9 +162,11 @@ projetArray.forEach(e => e.addEventListener("click", function(){
             window.location = 'nomads/index.html'
         }, 400)
     } 
+    setTimeout(() => {
+        whiteFade.style.display = "none";
+    }, 800)
+    
 }))
-
-
 
 
 $(window).load(function() {
