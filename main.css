@@ -4,13 +4,23 @@
     cursor: none;
 }
 
+@font-face {
+    font-family: 'brown_sugarregular';
+    src: url('fonts/brown_sugar_-webfont.woff2') format('woff2'),
+         url('fonts/brown_sugar_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --white: #ffffff;
     --dark: #252525;
     --lightGrey: #E1E1E1;
-    --title: fino;
+    --title: 'brown_sugarregular';
     --text: poppins, sans-serif;
 }
+
+
 
 /* Transition simple */
 @keyframes bottomReveal {
@@ -81,6 +91,15 @@
     }
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 .cursor {
     width: 25px;
     height: 25px;
@@ -121,7 +140,7 @@
     background-color: #ffffff4b;
     box-shadow: 5px 5px 10px #00000028;
     /* box-shadow: inset 0px 0px 15px #00000041; */
-    z-index: 1;
+    z-index: 2;
     border-radius: 50px;
     font-family: var(--text);
     font-size: 20px;
@@ -158,6 +177,7 @@
     /* filter: drop-shadow(1px 1px 10px #000000a1); */
     color: var(--dark);
     margin-top: 5px;
+    letter-spacing: 2px;
 }
 
 #menu-btn li {
@@ -174,6 +194,12 @@
     /* filter: drop-shadow(1px 1px 20px #ffffffa1); */
     transition: 0.3s;
     display: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.focus::before {
+    content: "• ";
 }
 
 .pages:hover {
@@ -185,7 +211,7 @@
         width: 130px;
     }
     to {
-        width: 70%;
+        width: 50%;
     }
 }
 
@@ -414,8 +440,9 @@ footer {
     }
 
     .toNav a {
-        font-size: 70px;
-        font-family: fino;
+        font-size: 53px;
+        font-family: 'brown_sugarregular';
+        font-weight: 500;
     }
 
     .pages {

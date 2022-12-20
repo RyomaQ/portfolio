@@ -4,7 +4,7 @@ body {
     background-color: black;
     width: 100vw;
     overflow-x: hidden;
-    scrollbar-width: none; 
+    scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
 }
@@ -23,8 +23,8 @@ h1 {
     z-index: 1;
 }
 
-#menu-btn {
-    z-index: 2;
+.menuWhite {
+    color: #ffffff;
 }
 
 .sectionDot {
@@ -40,7 +40,8 @@ h1 {
     width: 2px;
 }
 
-#verticalNav1 , #verticalNav2 {
+#verticalNav1,
+#verticalNav2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,8 +52,9 @@ h1 {
     transform: translateY(-50%);
 }
 
-#verticalNav1 .positiondDot , #verticalNav1 .navi-line {
-    background-color: #252525;   
+#verticalNav1 .positiondDot,
+#verticalNav1 .navi-line {
+    background-color: #252525;
 }
 
 .sectionDot:hover {
@@ -75,7 +77,8 @@ h1 {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     position: fixed;
 }
 
@@ -84,6 +87,7 @@ h1 {
     height: 100vh;
     backdrop-filter: blur(70px);
     position: absolute;
+
 }
 
 #noiseBg {
@@ -95,22 +99,64 @@ h1 {
     position: absolute;
 }
 
-#bonjour , #jeSuis {
-    font-family: var(--text);
-    font-weight: 100;
-    font-size: 7vw;
-    margin-left: 2%;
-    line-height: 115%;
+#skillsCircle {
+    position: absolute;
+    z-index: 1;
+    animation: rotate 10s infinite linear;
+    margin-left: 38%;
+    margin-top: -420px;
+    width: 400px;
+}
+
+#pageTitle {
     opacity: 0;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+}
+
+#jeSuis {
+    font-family: var(--title);
+    font-weight: 100;
+    font-size: 14vw;
+    line-height: 80%;
 }
 
 #creative-designer {
-    font-family: var(--title);
-    font-weight: 400;
-    font-size: 10vw;
+    font-family: var(--text);
+    font-weight: 200;
+    font-size: 2.7vw;
+    letter-spacing: 1.8vw;
     margin-left: 2%;
-    margin-bottom: 10vh;
+    margin-top: 2vh;
     opacity: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#star img {
+    width: 120px;
+}
+
+#star {
+    margin-left: -2%;
+}
+
+#bonjour {
+    font-size: 5vw;
+    font-family: var(--title);
+    position: absolute;
+    color: #ffffff;
+}
+
+.fadeOut {
+    animation: fadeOut 0.7s forwards;
 }
 
 /* Section 02 */
@@ -130,7 +176,10 @@ h1 {
     display: flex;
 }
 
-#p-age , #p-skills , #p-about , #p-also {
+#p-age,
+#p-skills,
+#p-about,
+#p-also {
     justify-content: center;
     align-items: center;
 }
@@ -146,10 +195,11 @@ h1 {
     flex: 3;
     align-items: flex-end;
     border-right: 1px solid black;
+    overflow: hidden;
 }
 
 #p-picture img {
-    width : 110%;
+    width: 110%;
 }
 
 #p-right {
@@ -201,7 +251,7 @@ h1 {
 #p-about {
     flex: 1;
     padding: 0 7%;
-    border-bottom: 1px solid black;    
+    border-bottom: 1px solid black;
     line-height: 35px;
 }
 
@@ -245,7 +295,8 @@ h1 {
     line-height: 4vw;
 }
 
-#nameInput , #emailInput {
+#nameInput,
+#emailInput {
     height: 60px;
     width: 85%;
     border-radius: 5px;
@@ -256,7 +307,7 @@ h1 {
     font-family: var(--text);
 }
 
-#messageInput{
+#messageInput {
     width: 85%;
     border-radius: 5px;
     background-color: #E1E1E1;
@@ -320,7 +371,7 @@ h1 {
     position: absolute;
     width: 40%;
     opacity: 0;
-    mix-blend-mode: darken ;
+    mix-blend-mode: darken;
 }
 
 .displayThank {
@@ -341,20 +392,47 @@ footer {
     top: 99vh;
 }
 
+@media screen and (min-width : 1023px) {
+
+    #menu-btn {
+        width: 50%;
+        box-shadow: none;
+        backdrop-filter: unset;
+        -webkit-backdrop-filter: unset;
+        background: none;
+        z-index: 0;
+    }
+
+    #menu-btn:hover {
+        background: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .pages {
+        display: block;
+        opacity: 100%;
+        font-weight: 300;
+        color: #ffffff;
+    }
+
+}
+
 @media screen and (max-width : 1023px) {
+
+    .menu {
+        color: var(--dark);
+    }
+
+    #bonjour {
+        display: none;
+    }
 
     #verticalNav1 {
         display: none;
     }
-
-    /* .navi-line {
-        height: 80px;
-    }
-
-    .positionDot {
-        width: 20px;
-        height: 20px;
-    } */
 
     #scroll-btn {
         z-index: 2;
@@ -367,7 +445,11 @@ footer {
     }
 
     @keyframes jumpingArrow {
-        0% , 20% , 40% , 100% {
+
+        0%,
+        20%,
+        40%,
+        100% {
             margin-top: 76vh;
         }
 
@@ -393,16 +475,32 @@ footer {
     #section01 {
         justify-content: center;
     }
-    
-    #bonjour , #jeSuis{
-        font-size: 13vw;
+
+    #pageTitle {
+        margin-top: -5vh;
+    }
+
+    #jeSuis {
+        font-size: 25vw;
+        text-align: center;
     }
 
     #creative-designer {
-        font-size: 25vw;
-        line-height: 90%;
-        margin-bottom: 0;
-        margin-left: 1%;
+        margin-left: 0%;
+        margin-top: 5vh;
+        flex-direction: column;
+        font-size: 10vw;
+        gap: 0px;
+        line-height: 50px;
+    }
+
+    #skillsCircle {
+        width: 300px;
+        margin-top: -300px;
+    }
+
+    #star img {
+        width: 40%;
     }
 
     #p-main {
@@ -410,7 +508,8 @@ footer {
         width: 100%;
     }
 
-    #p-also , #p-about{
+    #p-also,
+    #p-about {
         font-size: 16px;
         line-height: 22px;
         flex: 1;
@@ -494,44 +593,48 @@ footer {
         padding-bottom: 30vh;
     }
 
-     #contactForm {
+    #contactForm {
         width: 90%;
         height: unset;
-     }
+    }
 
-     .sectionDot {
+    .sectionDot {
         width: 10px;
         height: 10px;
-     }
+    }
 
-     #nameInput , #emailInput , #messageInput {
+    #nameInput,
+    #emailInput,
+    #messageInput {
         width: 89%;
         height: 40px;
         margin: 5px 0;
         font-size: 16px;
-     }
+    }
 
-     #messageInput {
+    #messageInput {
         height: 300px;
-     }
+    }
 
-     #contactForm h2 {
+    #contactForm {
+        gap: 0;
+    }
+
+    #contactForm h2 {
         font-size: 8vw;
         line-height: 11vw;
-        margin-top: 7vh;
-     }
+        margin-top: 13vh;
+    }
 
-     #sendBtn {
+    #sendBtn {
         width: 50%;
         height: 60px;
         font-weight: 400;
         margin: 0;
-        margin-top: 5px;
-     }
+        margin-top: 15px;
+    }
 
-     #s3d2 {
+    #s3d2 {
         display: none;
-     }
+    }
 }
-
-

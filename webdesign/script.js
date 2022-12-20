@@ -117,7 +117,7 @@ rightSide.addEventListener("scroll", () => {
         setTimeout(
             manageProjectTitleDisplay(
                 "Stage", 
-                "Goodeed invente les solutions de demain de collecte de dons en ligne pour aider les ONG à trouver de nouvelles sources de financements.", "#24afff", "goodeed/index.html", ""), 300);
+                "Goodeed invente les solutions de demain de collecte de dons en ligne pour aider les ONG à trouver de nouvelles sources de financements. Durant le stage, j’ai contribué aux différentes missions du pôle Design.", "#24afff", "goodeed/index.html", ""), 300);
         setTimeout(reverseProjectTitleDisplay(), 800);
     } else if (scrollValue > 99.9 && scrollValue < 100.1){
         setTimeout(

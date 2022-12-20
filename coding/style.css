@@ -42,11 +42,11 @@ body {
 
 
 #titles h1 {
-    font-family: fino, serif;
-    font-size: 6vw;
+    font-family: var(--title);
+    font-weight: 100;
+    font-size: 5vw;
     color: #252525;
     line-height: 100%;
-    position: absolute;
     bottom: 0;
 }
 
@@ -114,31 +114,39 @@ body {
     #rightSide {
         width: 100%;
         align-items: center;
-        margin-top: 15vh;
+        margin-top: 20vh;
     }
 
     #projet01 {
         margin: 4% 0;
-        margin-bottom: 5vh;
+        margin-bottom: 10vh;
     }
 
     .projet {
         transform: translateY(0);
-        margin-bottom: 5vh;
+        margin-bottom: 10vh;
     }
 
     .responsive-titles {
         width: 90%;
         display: block;
+        margin-bottom: 1vh;
     }
 
     .responsive-titles h1 {
-        font-family: fino, serif;
+        font-family: var(--title);
         color: var(--dark);
+        margin-bottom: 3vh;
     }
     
     .responsive-titles p {
         font-family: poppins;
         color: var(--dark);
+        line-height: 140%;
+        text-align: justify;
+    }
+
+    #projet05 {
+        margin-bottom: 25vh;
     }
 }
